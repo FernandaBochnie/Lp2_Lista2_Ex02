@@ -4,6 +4,7 @@ package Main;
 
 //@author Radames J Halmeman  - rjhalmeman@gmail.com
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -31,6 +32,11 @@ public class GUI extends JFrame {
     private JLabel lbResultado = new JLabel();
     private JLabel lbVazio = new JLabel();
     
+    private JLabel lbNota49 = new JLabel("0 à 49");
+    private JLabel lbNota64 = new JLabel("50 à 64");
+    private JLabel lbNota84 = new JLabel("65 à 84");
+    private JLabel lbNota100 = new JLabel("85 à 100");
+    
     private JLabel lbInsuficiente = new JLabel("Insuficiente");
     private JLabel lbRegular = new JLabel("Regular");
     private JLabel lbBom = new JLabel("Bom");
@@ -48,15 +54,48 @@ public class GUI extends JFrame {
         
         pnNorte.setLayout(new FlowLayout(FlowLayout.CENTER));
         
-        pnCentro.setLayout(new GridLayout(3,2));
+        pnCentro.setLayout(new GridLayout(7,2));
         
         pnCentro.add(lbNota);
         pnCentro.add(lbConceito);
         
+        pnCentro.add(lbNota49);
+        pnCentro.add(lbInsuficiente);
+        pnCentro.add(lbNota64);
+        pnCentro.add(lbRegular);
+        pnCentro.add(lbNota84);
+        pnCentro.add(lbBom);
+        pnCentro.add(lbNota100);
+        pnCentro.add(lbOtimo);
+        
         pnCentro.add(tfNotainformada);
-        pnCentro.add(lbVazio);
         pnCentro.add(lbResultado);
+        pnCentro.add(lbVazio);
         pnCentro.add(btEnviar);
+        
+        lbNota.setOpaque(true);
+        lbNota49.setOpaque(true);
+        lbNota64.setOpaque(true);
+        lbNota84.setOpaque(true);
+        lbNota100.setOpaque(true);
+        
+        lbConceito.setOpaque(true);
+        lbInsuficiente.setOpaque(true);
+        lbRegular.setOpaque(true);
+        lbBom.setOpaque(true);
+        lbOtimo.setOpaque(true);
+        
+        lbNota.setBackground(Color.BLUE);
+        lbNota49.setBackground(Color.cyan);
+        lbNota64.setBackground(Color.cyan);
+        lbNota84.setBackground(Color.cyan);
+        lbNota100.setBackground(Color.cyan);
+        
+        lbConceito.setBackground(Color.GRAY);
+        lbInsuficiente.setBackground(Color.lightGray);
+        lbRegular.setBackground(Color.lightGray);
+        lbBom.setBackground(Color.lightGray);
+        lbOtimo.setBackground(Color.lightGray);
         
         btEnviar.addActionListener(new ActionListener() {
             @Override
