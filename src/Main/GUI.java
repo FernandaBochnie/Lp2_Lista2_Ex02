@@ -90,26 +90,41 @@ public class GUI extends JFrame {
         lbNota64.setBackground(Color.cyan);
         lbNota84.setBackground(Color.cyan);
         lbNota100.setBackground(Color.cyan);
-        
+
         lbConceito.setBackground(Color.GRAY);
         lbInsuficiente.setBackground(Color.lightGray);
         lbRegular.setBackground(Color.lightGray);
         lbBom.setBackground(Color.lightGray);
         lbOtimo.setBackground(Color.lightGray);
-        
+
         btEnviar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Entidade entidade = new Entidade();
+               
+                lbNota49.setBackground(Color.cyan);
+                lbNota64.setBackground(Color.cyan);
+                lbNota84.setBackground(Color.cyan);
+                lbNota100.setBackground(Color.cyan);
+
+                lbInsuficiente.setBackground(Color.lightGray);
+                lbRegular.setBackground(Color.lightGray);
+                lbBom.setBackground(Color.lightGray);
+                lbOtimo.setBackground(Color.lightGray);
                 
-                entidade.setValor(Integer.valueOf(tfNotainformada.getText()));
-                
-                entidade.setInsuficiente(String.valueOf(lbInsuficiente.getText()));
-                entidade.setRegular(String.valueOf(lbRegular.getText()));
-                entidade.setBom(String.valueOf(lbBom.getText()));
-                entidade.setOtimo(String.valueOf(lbOtimo.getText()));
-                
-                lbResultado.setText(String.valueOf(entidade.getResultado()));
+                int nota= Integer.parseInt(tfNotainformada.getText());
+                if (nota>= 0 && nota< 50) {
+                    lbInsuficiente.setBackground(Color.MAGENTA);
+                }
+                if (nota >= 50 && nota < 65) {
+                    lbRegular.setBackground(Color.MAGENTA);
+                }
+                if (nota >= 65 && nota < 85) {
+                    lbBom.setBackground(Color.MAGENTA);
+                }
+                if (nota >= 85 && nota <= 100) {
+                    lbOtimo.setBackground(Color.MAGENTA);
+                }
             }
         });
         
